@@ -20,7 +20,7 @@ public class Shephard_Wizard //inspired by The Shephard Wizard Webtoon
         if (choice == 1)
         {
             patience--;
-            System.out.println("\"You weren't paying attention, were you? Then let me be direct I'm sick of seeing this everyday so choose something else!\"");
+            System.out.println("\"There is a tree behind me, there is a tree in front of me, there's a sheep there, there's a sheep here & grass gRAsS GRASS EVERYWHERE! Happy?\"");
         }
         else if (choice == 2)
         {
@@ -29,11 +29,11 @@ public class Shephard_Wizard //inspired by The Shephard Wizard Webtoon
         }
         else if (choice == 3)
         {
-            System.out.println("Sounds good.");
+            System.out.println("\"Sounds good.\"");
         }
         else
         {
-            System.out.println("I'm sorry, but did you even TRY to pay attention? I said choose a number from 1-3!!!");
+            System.out.println("You weren't paying attention, were you? *sighs* let me repeat: choose a number from 1-3");
         }
     }
 }
