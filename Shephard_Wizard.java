@@ -25,7 +25,7 @@ public class Shephard_Wizard //inspired by The Shephard Wizard Webtoon
             if (currentSCENE.equals("HILL_SCENE"))
             {
                 System.out.println("\"Ah~ I'm bored. Do something, won't you? Or are you just here to stare at my face?\"");
-                System.out.println("Enter a number from 1-3 to select ur choice:");
+                System.out.println("Enter a number from the given options to select ur choice:");
                 if (scenerySEEN ==  false)
                 {
                     System.out.println(" 1. Just enjoy the scenery");
@@ -165,7 +165,7 @@ public class Shephard_Wizard //inspired by The Shephard Wizard Webtoon
                 }
                 else
                 {
-                    System.out.println("\"Ok, I'm done. Now I'm gonna go in & sleep. And just to make things clear, you are NOT allowed inside.\" *bangs the door shut"); //direct to next day sequence without TDL/backstory
+                    System.out.println("\"Ok, I'm done. Now I'm gonna go in & sleep. And just to make things clear, you are NOT allowed inside.\" *bangs the door shut*"); //direct to next day sequence without TDL/backstory
                 }
                 
                 gameRUNNING = false;
@@ -175,7 +175,7 @@ public class Shephard_Wizard //inspired by The Shephard Wizard Webtoon
 
     public static void printINVALIDchoice() //void = Execute this code, but don't expect a value back
     {
-        System.out.println("You weren't paying attention, were you? *sighs* I asked you to enter ONE number from 1,2 or 3!");
+        System.out.println("You weren't paying attention, were you? *sighs* I asked you to enter ONE number from 1,2 or 3 whichever is available in the options!");
     }
 
     public static void displayPARAMETERS() //temporary tracker of secret stats
