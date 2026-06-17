@@ -15,7 +15,7 @@ public class Shephard_Wizard //inspired by The Shephard Wizard Webtoon
 
         boolean scenerySEEN = false;
 
-        System.out.println("A shephard is sitting under the tree, the cool breeze playing with his long hair which was tied into a pony.");
+        System.out.println("A shepherd is sitting under the tree, the cool breeze playing with his long hair which was tied into a pony.");
         System.out.println("His sheep are grazing on the evergreen hill, a scene he's all too familiar with.");
 
         while (gameRUNNING) //forever loop
@@ -46,7 +46,7 @@ public class Shephard_Wizard //inspired by The Shephard Wizard Webtoon
                         printINVALIDchoice();
                         continue;
                     }
-                } //add this for other choice blocks, also make dance scene seperate. no nesting choices like that. then make home scene.
+                }
                 
                 if (choice == 1 && scenerySEEN == false) //Just enjoy the scenery
                 {
@@ -61,60 +61,91 @@ public class Shephard_Wizard //inspired by The Shephard Wizard Webtoon
                     patience = patience - 5;
                     
                     System.out.println("\"No, YOU dance for ME. period.\"");
-                    System.out.println("What will you do?\n 1. Show off your dancing skills\n 2. Butter him up\n 3. You know what? Let's just go home");
                     
-                    choice = input.nextInt();
-
-                    if (choice == 1) //Show off your dancing skills
-                    {
-                        patience = patience + 4;
-                        browniePT = browniePT + 2;
-                        System.out.println("*looks dumbfounded* \"Uhhhhh, that was...unique. I suppose we can wrap up for today & go home! Follow me!\"");
-                        System.out.println("As if in a trance, you & the sheep follow him");
-                    }
-                    else if (choice == 2) //Butter him up
-                    {
-                        patience = patience + 2;
-                        browniePT = browniePT +1;
-                        System.out.println("=_= \"I can see what you're doing...No matter! I suppose I could forgive you THIS once.\"");
-                    }
-                    else if (choice == 3) //You know what? Let's just go home
-                    {
-                        System.out.println("\"Tch! I REALLY don't like your attitude. Hmph@ Come my dearies, it's time to go home~\"");
-                        System.out.println("As if in a trance, all the sheep follow him at once. You...well you also follow him cause you don't really have a choice.");
-                    }
-                    else
-                    {
-                        printINVALIDchoice();
-                    }
+                    currentSCENE = "DANCE_SCENE";                 
                 }
                 else if (choice == 3) //Let's go home
                 {
-                    System.out.println("\"Sounds good.\"");
-                }
-                else
-                {
-                    printINVALIDchoice();
+                    patience = patience + 1;
+
+                    System.out.println("\"Sounds good.\"  *stands up & looks at his sheep* \"Come on my dearies, it's time to go home~\"");
+                    System.out.println("As if in a trance, all the sheep start following him at once! You freeze & look at the scene with amazed eyes. Then you snap out of it & catch up with them on the way home.");
+
+                    currentSCENE = "HOME_SCENE";
                 }
             }
             
+            //--------------- DANCE SCENE ---------------------
+            if (currentSCENE.equals("DANCE_SCENE"))
+            {
+                System.out.println("What will you do?\n 1. Show off your dancing skills\n 2. Butter him up\n 3. Beg for forgiveness");
+
+                if (!input.hasNextInt())
+                {
+                    printINVALIDchoice();
+                    input.next();
+                    continue;
+                }
+                else
+                {
+                    choice = input.nextInt();
+
+                    if (choice<1 || choice>3)
+                    {
+                        printINVALIDchoice();
+                        continue;
+                    }
+                }
+
+                if (choice == 1) //Show off your dancing skills
+                    {
+                        patience = patience + 4;
+                        sass = sass - 1;
+
+                        System.out.println("*looks dumbfounded*\n\"Uhhhhh, that was...unique. I suppose we can wrap up for today & go home! Follow me!\"");
+                        System.out.println("He grabs his cane & starts moving uphill. As if in a trance, you & the sheep unconditionally follow him.");
+
+                        currentSCENE = "HOME_SCENE";
+                    }
+                    else if (choice == 2) //Butter him up
+                    {
+                        patience = patience + 5;
+                        browniePT = browniePT +1;
+
+                        System.out.println("=_=\n\"I can see what you're doing\"\n. . .\n\"No matter! I suppose I could forgive you THIS once.\"");
+                        System.out.printl("He continues to ador-AHEM! tend to his sheep, while humming a tune with a smile on his face. The day comes to an end with the sun setting, painting the hillside in hues of red. Then, he tells the sheep & you to follow him as it was time to go home.");
+                        
+                        currentSCENE = "HOME_SCENE";
+                    }
+                    else if (choice == 3) //Beg for forgiveness
+                    {
+                        System.out.println("You get down on your knees & start begging for forgiveness. The shepherd makes a disgusted look & acts as if he didn't see anything. He ignores you as he continues to adore(?) his sheep affectionately, like a mother does to her child.");
+                        System.out.println("The day eventually comes to an end with the sunset, marking the end of the unbearable silence. Then, he yells out loud to follow him home & you do so, along with the sheep, without giving it a single thought.");
+                    }
+            }          
         }     
     }
+
     public static void printINVALIDchoice() //void = Execute this code, but don't expect a value back
     {
-        System.out.println("You weren't paying attention, were you? *sighs* I asked you to enter a number from 1/2/3!");
+        System.out.println("You weren't paying attention, were you? *sighs* I asked you to enter ONE number from 1,2 or 3!");
+    }
+
+    public static void displayPARAMETERS() //temporary tracker of secret stats
+    {
+        System.out.println(" patience = "+ patience +"\n browniePT = "+ browniePT +"\n sass = "+ sass);
     }
 }
 
 
 
-System.out.println("You have reached home. The shephard is rounding up the sheep in their pen.");
+System.out.println("You have reached home. The shepherd is rounding up the sheep in their pen.");
                 System.out.println("\"Okay, that's all of them. What now?\");
                 System.out.println("1. Idk. YOU tell ME\n
                                    2. Tell me about yourself");
             }
             
-                System.out.println("You have reached home. The shephard is rounding up the sheep in their pen.");
+                System.out.println("You have reached home. The shepherd is rounding up the sheep in their pen.");
                 System.out.println("\"Okaaaay, that's all of them. What is your order now sire?~\");
                 System.out.println("1. Uhhhhhh, idk. What do you  usually do?\n"
                                    + "2. Tell me about yourself my dear subject!");
